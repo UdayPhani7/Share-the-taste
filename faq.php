@@ -89,16 +89,6 @@
       <div class="panel">
         <p>After logging in,you will find a button named create recipe.By clicking the button create recipe page will be displayed.You can create recipie by filling the details and adding your recipe video.</p>
       </div>
-      <button class="accordion text-white">How to change password?</button>
-      <div class="panel">
-        <p>
-          1.Click on forget password.<br>
-          2.Then enter your email address.<br>
-          3.You will recieve an link regarding changing password to your given mail.<br>
-          4.By clicking on link,it directs to change password.<br>
-          5.Create your new password.
-        </p>
-      </div>
       <button class="accordion text-white">How to contact helpline?</button>
       <div class="panel">
         <p>In home page,you will find contact us button.You can contact us through different social media which are given in contact us page.</p>
