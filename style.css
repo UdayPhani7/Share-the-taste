@@ -1,0 +1,144 @@
+*{
+    font-family: Century Gothic
+}
+body{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(images/img/food.jpg);
+	overflow-x: hidden;
+}
+body::-webkit-scrollbar{
+	width: 0px;
+}
+.nav{
+	border: none;
+	margin-top: auto;
+	margin-bottom: auto;
+	font-weight: bold;
+}
+.nav-item{
+	margin: 2px;
+}
+.logo{
+	height: 130px;
+	width: 170px;
+	border-radius: 100%;
+}
+.logout{
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin: 39px 30px 0;
+    color: whitesmoke;
+}
+.center{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+}
+.center h1{
+	text-align: center;
+	padding: 0 10 20px 0;
+	border-bottom: 1px solid silver;
+}
+.center form{
+	padding: 0 40px;
+	box-sizing: border-box;
+}
+form .txt_field{
+	position: relative;
+	border-bottom: 2px solid #adadad;
+	margin: 15px 0px;
+}
+.txt_field input{
+	width:  100%;
+	padding:  0 10px;
+	color: whitesmoke;
+	height: 30px;
+	font-size: 16px;
+	border: none;
+	background: none;
+	outline: none;
+}
+.txt_file label{
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	transform: translate(-50%);
+	font-size: 16px;
+	padding-events: none;
+	transition: .5s;
+}
+.txt_field span::before{
+	content:'';
+	position: absolute;
+	top: 40px;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background:#2691d9;
+	transition: .5s;
+}
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+	top: -5px;
+	color:whitesmoke;
+}
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+	width: 100%;
+}
+.pass{
+	margin: -5px 0 15px 5px;
+	cursor: pointer;
+	transition: 1s;
+}
+.done{
+	width: 100%;
+	height: 50px;
+	border: 2px solid;
+	border-radius: 25px;
+	font-size: 18px;	
+	font-weight: 700;
+	cursor: pointer;
+	outline: none;
+}
+.done:hover{
+	border-color: red;
+	transition: 1s;
+}
+.pass-img{
+	width: 100%;
+	height: auto;
+}
+.err-box{
+	text-align:center;
+	margin: 10px;
+	height: 0px;
+}
+.text-danger {
+	padding: 10px;
+	border-radius: 5px;
+}
+.recipes{
+    overflow-y: scroll;
+    max-height:350px;
+}
+.recipes::-webkit-scrollbar{
+    width: 0px;
+}
+.rbox{
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 7px;
+    padding: 5px;
+    color: black;
+    text-align: center;
+    font-size: 17px;
+}
+.rbox img{
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 5px;
+}
