@@ -88,7 +88,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
           <ul class="nav nav-tabs nav-justified">
             <li class="nav-item">
-              <a class="nav-link text-dark" href="home.php">Home<br><label>&nbsp;</label></a>
+              <a class="nav-link text-dark" href="dashboard.php">Home<br><label>&nbsp;</label></a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-dark" href="profile.php">View Profile</a>

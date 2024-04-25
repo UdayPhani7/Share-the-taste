@@ -13,23 +13,26 @@
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $phone = mysqli_real_escape_string($conn, $_POST['phone']);
         $bio = mysqli_real_escape_string($conn, $_POST['bio']);
-        if(mysqli_query($conn,"UPDATE users SET name = '" . $name . "', phone = '" . $phone . "', email = '" . $email . "', bio = '" . $bio . "' where uid = '" . $uid . "';")) {
+		$flag=0;
+        if (!preg_match("/^[a-zA-Z ]+$/",$name)) {
+			$name_error = "Name must contain only alphabets and space";
+			$flag=1;
+		}
+		if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+			$email_error = "Please Enter Valid Email ID";
+			$flag=1;
+		}
+        if($flag == 0 &&mysqli_query($conn,"UPDATE users SET name = '" . $name . "', phone = '" . $phone . "', email = '" . $email . "', bio = '" . $bio . "' where uid = '" . $uid . "';")) {
 ?>
             <script>
                 window.location.replace("profile.php");
                 alert("<?php echo "Saved Profile"?>");
             </script>
 <?php
-        }else {
-?>
-            <script>
-                window.location.replace("profile.php");
-                alert("<?php echo "Error : Profile not updated"?>");
-            </script>
-<?php
         }
     }
 ?>
+        
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -99,6 +102,33 @@
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h4 class="text-right">Profile Settings</h4><hr>
                         </div>
+                        <p class="text-danger" id="danger">
+<?php
+					if (isset($email_error)){
+?>
+						<script>
+							document.getElementById("danger").innerHTML = "<?php echo $email_error ?>";
+							document.getElementById("danger").style.backgroundColor = "rgba(255,255,255,0.15)";
+							document.getElementById("danger").style.border = "2px solid red";
+							document.getElementById("errb").style.height = "auto";
+							<?php unset($email)?>;
+						</script>
+<?php
+					}
+
+					if (isset($name_error)){
+?>
+						<script>
+							document.getElementById("danger").innerHTML = "<?php echo $name_error ?>";
+							document.getElementById("danger").style.backgroundColor = "rgba(255,255,255,0.15)";
+							document.getElementById("danger").style.border = "2px solid red";
+							document.getElementById("errb").style.height = "auto";
+							<?php unset($name)?>;
+						</script>
+<?php
+					}
+?>
+					</p>
                         <form method="post">
                             <div class="row mt-3">
                                 <div class="col-md-12">

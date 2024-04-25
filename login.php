@@ -89,9 +89,6 @@
             <span></span>
           </div>
           <input type="submit" class="done" name="login" value="Login">
-          <div class="pass pt-2 text-center">
-            <a href="forgot.php" class="text-white">Forgot password?</a>
-          </div>
         </form>
       </div>
     </div>
